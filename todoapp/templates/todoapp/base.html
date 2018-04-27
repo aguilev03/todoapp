@@ -1,0 +1,75 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!--Medium style editor-->
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">  
+    
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{% static 'css/todoapp.css' %}">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Montserrat" rel="stylesheet">
+    <link href="{% static 'css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+    <title>TechOps TaskAPP</title>
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/black-tie/jquery-ui.min.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    
+    <!-- Date picker for site -->
+    <script>
+        $(function(){
+  $.datepicker.setDefaults(
+    $.extend( $.datepicker.regional[ '' ] )
+  );
+  $( '#datepicker' ).datepicker();
+});
+        </script>
+
+  </head>
+  <body>
+    
+    <!-- Nav Bar start -->
+    <nav class="navbar navbar-dark bg-dark techfont custom-navbar">
+      <div class="container">
+        <ul class="nav navbar">
+          
+          <li class="nav-item"><a class="navbar-brand bigbrand text-light" href="{% url 'task_list' %}">Task<span class="app-color">App</span></a></li>
+          <li class="nav-item"><a class="text-light" href=""</li>
+        
+        </ul>
+        <ul class="nav navbar justify-content-end">
+          
+          {% if user.is_authenticated %}
+          <li class="nav-item"><a class="text-light nav-spacer" href="{% url 'task_new' %}"><span class="oi oi-plus"></span></a></li>
+          <li class="nav-item"><a class="text-light nav-spaer" href="{% url 'task_complete_list' %}">All Task</a></li>
+          <li class="nav-item"><a class="text-light nav-spacer" href="{% url 'task_user_list' username=user.username %}">Task: {{ user.username }}</a></li>
+          <li class="nav-item"><a class="text-light nav-spacer" href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+          <li class="nav-item"><a class="text-light navbar-right" href="{% url 'login' %}"><span class="oi oi-key"></span></a></li>
+          {% endif %}
+          
+        </ul>
+      </div>
+    </nav>
+      <div class="content container">
+              {% block content %}
+
+
+
+              {% endblock %}
+           
+      </div>
+  </body>
+</html>

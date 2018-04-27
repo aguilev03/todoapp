@@ -1,0 +1,12 @@
+{% extends "todoapp/base.html" %}
+
+{% block content %}
+    <form method="post">
+        {% csrf-token %}
+        <p>Are you sure you want to delete {{ object }}</p>
+        <input type="submit" class="btn btn-danger" value="Confirm">
+        
+    </form>
+
+
+{% endblock %}

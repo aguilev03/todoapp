@@ -1,0 +1,37 @@
+{% extends "todoapp/base.html" %}
+
+
+{% block content %}
+    
+
+    <div class="container centerstage">
+       <table class="table task-list-table table-striped">
+            <thead class="thead-custom">
+                <tr>
+                    <th scope="col">priority</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Category :: Sub</th>
+                    <th scope="col">Assigned</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                {% for task in task_list %}
+                    <tr>
+                        <td>{{ task.priority }}</td>
+                        <td><a  class="task-subject" href="{% url 'task_detail' pk=task.pk %}">{{ task.subject }}</a></td>
+                        <td>{{ task.due_date }}</td>
+                        <td>{{ task.status }}</td>
+                        <td>{{ task.category }} :: {{ task.sub_category }}</td>
+                        <td>Assigned to: {{ task.assign }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+   
+    
+
+{% endblock %}

@@ -1,0 +1,44 @@
+.bigbrand {
+    font-size: 2em;
+}
+
+.app-color {
+    color: #f4a442;
+}
+
+.nav-spacer {
+    margin: 10px;
+}
+
+.content {
+    padding-top: 3%;
+}
+
+/* Task detail page */
+
+.taskdetail-container {
+    margin-top: 3%;
+}
+
+.subject-container {
+    margin-bottom: 5%;
+}
+
+.subject-container h3 {
+    margin-top: 1%;
+    font-size: 1.2em;
+}
+
+/* Task List */
+
+.task-subject {
+    font-weight: bold;
+    color:  #4c4c4c;
+    text-decoration: underline; 
+}
+
+.thead-custom {
+    background-color: #303030;
+    font-weight: bold;
+    color: #ededed;
+}

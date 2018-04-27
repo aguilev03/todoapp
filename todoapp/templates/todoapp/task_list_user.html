@@ -1,0 +1,32 @@
+{% extends "todoapp/base.html" %}
+
+
+{% block content %}
+    
+
+    <div class="container centerstage">
+       
+        <div class="row header-row">
+                <div class="col">priority</div>
+                <div class="col">Subject</div>
+                <div class="col">Due Date</div>
+                <div class="col">Status</div>
+                <div class="col">Category :: Sub</div>
+                <div class="col">Assigned</div>
+        </div>
+        {% for task in task_list %}
+            {% if task.assign is not user.username %}
+                <div class="row">
+                <div class="col">{{ task.priority }}</div>
+                <div class="col"><a href="{% url 'task_detail' pk=task.pk %}">{{ task.subject }}</a></div>
+                <div class="col">{{ task.due_date }}</div>
+                <div class="col">{{ task.status }}</div>
+                <div class="col">{{ task.category }} :: {{ task.sub_category }}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+   
+    
+
+{% endblock %}
