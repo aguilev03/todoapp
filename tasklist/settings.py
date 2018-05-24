@@ -25,7 +25,7 @@ SECRET_KEY = '=ba3h%uvf_r*laur#nxyok72^0zve)#+rm!-6u%9%&p-dlp!qv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '172.16.0.100', 'aws.com']
 
 
 # Application definition
@@ -120,5 +120,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
+#STATICFILES_DIRS = (
+#	os.path.join(BASE_DIR, 'css/'),
+#	os.path.join(BASE_DIR, 'javascript/'),
+#	os.path.join(BASE_DIR, 'images/'),
+#)
 
 LOGIN_REDIRECT_URL ='/'

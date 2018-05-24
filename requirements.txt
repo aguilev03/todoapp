@@ -1,2 +1,5 @@
 Django==1.11
+gunicorn==19.8.1
+meld3==1.0.2
 pytz==2018.4
+supervisor==3.3.4

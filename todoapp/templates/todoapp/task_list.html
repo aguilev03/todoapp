@@ -25,7 +25,7 @@
                         <td>{{ task.due_date }}</td>
                         <td>{{ task.status }}</td>
                         <td>{{ task.category }} :: {{ task.sub_category }}</td>
-                        <td>Assigned to: {{ task.assign }}</td>
+                        <td>Assigned to: <span class="capitalizeit">{{ task.assign }}</span></td>
                     </tr>
                 {% endfor %}
             </tbody>
